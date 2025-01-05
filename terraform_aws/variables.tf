@@ -1,3 +1,4 @@
+# Used for declaration of variables
 variable "region" {
   type        = string
   description = "AWS region for all resources."
@@ -47,4 +48,15 @@ variable "vpc_tags" {
     Terraform   = "true"
     Environment = "dev"
   }
+}
+
+variable "ec2_instance_type" {
+  description = "Type of EC2 instance to deploy"
+  type = string
+  default = "t2.micro"  
+}
+variable "ec2_instance_count" {
+  description = "Number of EC2 instances to deploy"
+  type = number
+  default = 1
 }

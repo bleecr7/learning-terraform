@@ -44,11 +44,11 @@ module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "4.3.0"
 
-  count = 2
+  count = var.ec2_instance_count
   name  = "my-ec2-cluster-${count.index}"
-
+  
   ami                    = data.aws_ami.ubuntu.image_id
-  instance_type          = "t2.micro"
+  instance_type          = var.ec2_instance_type
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 

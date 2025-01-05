@@ -2,3 +2,4 @@
 *.csv
 */.terraform/*
 */plans/*
+*.tfvars
