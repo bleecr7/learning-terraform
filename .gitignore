@@ -1,0 +1,4 @@
+*.txt
+*.csv
+*.tfstate*
+.terraform*
